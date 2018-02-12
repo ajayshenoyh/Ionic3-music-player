@@ -15,6 +15,7 @@ import {MediaPlugin, MediaObject} from '@ionic-native/media';
 })
 export class MusicPlayerPage {
   public music = {};
+  private isMusicPaused = false;
   private songMedia: MediaObject=null;
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
@@ -31,12 +32,18 @@ export class MusicPlayerPage {
     if(this.songMedia === null){
     this.songMedia = this.mediaPlugin.create(this.music["music_url"]);
     this.songMedia.play();
+  } else {
+    if(this.isMusicPaused === true) {
+      this.songMedia.play();
+      this.isMusicPaused = false;
+    }
   }
   }
 
   pauseMusic() {
     if(this.songMedia!==null){
     this.songMedia.pause();
+    this.isMusicPaused=true;
   }
   }
 
