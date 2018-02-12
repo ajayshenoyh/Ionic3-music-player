@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MusicPlayerPage} from "../music-player/music-player";
 import { NavController, LoadingController, ActionSheetController } from 'ionic-angular';
 import {MusicProvider} from "../../providers/music/music";
 import {SocialSharing} from "@ionic-native/social-sharing"
@@ -66,4 +67,9 @@ shareSong(music){
 shareSongActionSheet.present();
 }
 
+listenSong(music) {
+    this.navCtrl.push(MusicPlayerPage, {
+      music: music
+    });
+}
 }
