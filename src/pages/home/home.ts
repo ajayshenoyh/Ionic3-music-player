@@ -7,7 +7,7 @@ import {SocialSharing} from "@ionic-native/social-sharing"
   templateUrl: 'home.html'
 })
 export class HomePage {
-public allMusic = [];
+public allMusic:any = [];
   constructor(private socialSharing: SocialSharing, private actionSheetController:ActionSheetController, private loadingController: LoadingController, private musicProvider: MusicProvider, public navCtrl: NavController) {
 
   }
