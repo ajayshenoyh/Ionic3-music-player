@@ -28,6 +28,9 @@ export class MusicPlayerPage {
 
   }
 
+  ionViewWillLeave(){
+    this.stopMusic();
+  }
   playMusic() {
     if(this.songMedia === null){
     this.songMedia = this.mediaPlugin.create(this.music["music_url"]);
